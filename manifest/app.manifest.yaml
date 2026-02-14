@@ -1,0 +1,60 @@
+version: '1'
+app:
+  name: module_test
+  host_os:
+    windows:
+      environments:
+        PATH: ["PATH1", "PATH2"]
+        VAR: "Value"
+        ENABLE_VULKAN_VALIDATION_LAYER: "True"
+      modules:
+        - ${EXE_DIR}/modules/arieo_vulkan_module.dll
+        - ${EXE_DIR}/modules/arieo_glfw_win_module.dll
+        - ${EXE_DIR}/modules/arieo_os_filesystem_archive_module.dll
+        - ${EXE_DIR}/modules/arieo_image_loader_module.dll
+        - ${EXE_DIR}/modules/arieo_model_loader_module.dll
+      
+        - ${EXE_DIR}/modules/arieo_render_test_module.dll
+    ubuntu:
+      main_module: ${EXE_DIR}/modules/libarieo_main_module.so
+      modules:
+        - ${EXE_DIR}/modules/libarieo_vulkan_module.so
+        - ${EXE_DIR}/modules/libarieo_x11_window_module.so
+        - ${EXE_DIR}/modules/libarieo_os_filesystem_archive_module.so
+        - ${EXE_DIR}/modules/libarieo_image_loader_module.so
+        - ${EXE_DIR}/modules/libarieo_model_loader_module.so
+      
+        - ${EXE_DIR}/modules/libarieo_render_test_module.so
+    raspberry:
+      main_module: ${EXE_DIR}/modules/libarieo_main_module.so
+      modules:
+        - ${EXE_DIR}/modules/libarieo_vulkan_module.so
+        - ${EXE_DIR}/modules/libarieo_x11_window_module.so
+        - ${EXE_DIR}/modules/libarieo_os_filesystem_archive_module.so
+        - ${EXE_DIR}/modules/libarieo_image_loader_module.so
+        - ${EXE_DIR}/modules/libarieo_model_loader_module.so
+      
+        - ${EXE_DIR}/modules/libarieo_render_test_module.so
+    android:
+      # main module's name is hardcoded in the AndroidMain of bootstrap_app project
+      # main_module: ${EXE_DIR}/modules/libarieo_main_module.so
+      modules:
+        - $ENV{APP_INTERNAL_DATA_DIR}/engine/modules/libarieo_vulkan_module.so
+        - $ENV{APP_INTERNAL_DATA_DIR}/engine/modules/libarieo_os_filesystem_archive_module.so
+        - $ENV{APP_INTERNAL_DATA_DIR}/engine/modules/libarieo_image_loader_module.so
+        - $ENV{APP_INTERNAL_DATA_DIR}/engine/modules/libarieo_model_loader_module.so
+        - $ENV{APP_INTERNAL_DATA_DIR}/engine/modules/libarieo_android_win_module.so
+      
+        - $ENV{APP_INTERNAL_DATA_DIR}/engine/modules/libarieo_render_test_module.so
+    macos:
+      environments:
+        ENABLE_VULKAN_VALIDATION_LAYER: "False"
+      main_module: ${EXE_DIR}/modules/libarieo_main_module.so
+      modules:
+        - ${EXE_DIR}/modules/libarieo_vulkan_module.so
+        - ${EXE_DIR}/modules/libarieo_glfw_win_module.so
+        - ${EXE_DIR}/modules/libarieo_os_filesystem_archive_module.so
+        - ${EXE_DIR}/modules/libarieo_image_loader_module.so
+        - ${EXE_DIR}/modules/libarieo_model_loader_module.so
+
+        - ${EXE_DIR}/modules/libarieo_render_test_module.so
