@@ -5,7 +5,7 @@ app:
     windows:
       environments:
         PATH: ["PATH1", "PATH2"]
-        ENGINE_INSTALL_PATH: "${EXE_DIR}/../../../../../../install/02_engine"
+        ENGINE_INSTALL_PATH: "${EXE_DIR}/../../../../../../output/02_engine"
         ENGINE_PRESET: "windows.x86_64"
         ENGINE_BUILD_TYPE: "RelWithDebInfo"
         ENABLE_VULKAN_VALIDATION_LAYER: "True"
@@ -25,7 +25,7 @@ app:
     ubuntu:
       environments:
         PATH: ["PATH1", "PATH2"]
-        ENGINE_INSTALL_PATH: "${EXE_DIR}/../../../../../../install/02_engine"
+        ENGINE_INSTALL_PATH: "${EXE_DIR}/../../../../../../output/02_engine"
         ENGINE_PRESET: "ubuntu.x86_64"
         ENGINE_BUILD_TYPE: "RelWithDebInfo"
 
@@ -43,7 +43,7 @@ app:
     raspberry:
       environments:
         PATH: ["PATH1", "PATH2"]
-        ENGINE_INSTALL_PATH: "${EXE_DIR}/../../../../../../install/02_engine"
+        ENGINE_INSTALL_PATH: "${EXE_DIR}/../../../../../../output/02_engine"
         ENGINE_PRESET: "raspberry.armv8"
         ENGINE_BUILD_TYPE: "RelWithDebInfo"
 
@@ -61,7 +61,7 @@ app:
     android:
       environments:
         PATH: ["PATH1", "PATH2"]
-        ENGINE_INSTALL_PATH: "${EXE_DIR}/../../../../../../install/02_engine"
+        ENGINE_INSTALL_PATH: "${EXE_DIR}/../../../../../../output/02_engine"
         ENGINE_PRESET: "android.armv8"
         ENGINE_BUILD_TYPE: "RelWithDebInfo"
 
@@ -80,7 +80,7 @@ app:
     macos:
       environments:
         PATH: ["PATH1", "PATH2"]
-        ENGINE_INSTALL_PATH: "${EXE_DIR}/../../../../../../install/02_engine"
+        ENGINE_INSTALL_PATH: "${EXE_DIR}/../../../../../../output/02_engine"
         ENGINE_PRESET: "macos.arm64"
         ENGINE_BUILD_TYPE: "RelWithDebInfo"
         ENABLE_VULKAN_VALIDATION_LAYER: "False"
