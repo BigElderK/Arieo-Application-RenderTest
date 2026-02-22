@@ -3,9 +3,12 @@ project(arieo_render_test_app LANGUAGES NONE)
 
 include($ENV{ARIEO_BUILD_ENV_PACKAGES_OUTPUT_DIR}/cmake/build_environment.cmake)
 
-add_custom_target(ArieoApplications ALL)
+ARIEO_PACKAGE(
+    Arieo-Application-RenderTest
+    CATEGORY 04_applications
+)
 
-arieo_application_project(
+ARIEO_APPLICATION_PROJECT(
     arieo_render_test_app
     CONTENT_FOLDER
         ${CMAKE_CURRENT_LIST_DIR}/content
