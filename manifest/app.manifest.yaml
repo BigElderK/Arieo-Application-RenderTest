@@ -18,6 +18,7 @@ app:
         - $ENV{ENGINE_INSTALL_PATH}/Arieo-Module-Vulkan/$ENV{ENGINE_PRESET}/bin/$ENV{ENGINE_BUILD_TYPE}/arieo_vulkan_module.dll
         - $ENV{ENGINE_INSTALL_PATH}/Arieo-Module-GlfwWindow/$ENV{ENGINE_PRESET}/bin/$ENV{ENGINE_BUILD_TYPE}/arieo_glfw_win_module.dll
         - $ENV{ENGINE_INSTALL_PATH}/Arieo-Module-OSFileSystemArchive/$ENV{ENGINE_PRESET}/bin/$ENV{ENGINE_BUILD_TYPE}/arieo_os_filesystem_archive_module.dll
+        - $ENV{ENGINE_INSTALL_PATH}/Arieo-Module-ObbArchive/$ENV{ENGINE_PRESET}/bin/$ENV{ENGINE_BUILD_TYPE}/arieo_obb_archive_module.dll
         - $ENV{ENGINE_INSTALL_PATH}/Arieo-Module-ImageLoader/$ENV{ENGINE_PRESET}/bin/$ENV{ENGINE_BUILD_TYPE}/arieo_image_loader_module.dll
         - $ENV{ENGINE_INSTALL_PATH}/Arieo-Module-ModelLoader/$ENV{ENGINE_PRESET}/bin/$ENV{ENGINE_BUILD_TYPE}/arieo_model_loader_module.dll
       
@@ -36,10 +37,11 @@ app:
         - $ENV{ENGINE_INSTALL_PATH}/Arieo-Module-Vulkan/$ENV{ENGINE_PRESET}/bin/$ENV{ENGINE_BUILD_TYPE}/libarieo_vulkan_module.so
         - $ENV{ENGINE_INSTALL_PATH}/Arieo-Module-X11Window/$ENV{ENGINE_PRESET}/bin/$ENV{ENGINE_BUILD_TYPE}/libarieo_x11_window_module.so
         - $ENV{ENGINE_INSTALL_PATH}/Arieo-Module-OSFileSystemArchive/$ENV{ENGINE_PRESET}/bin/$ENV{ENGINE_BUILD_TYPE}/libarieo_os_filesystem_archive_module.so
+        - $ENV{ENGINE_INSTALL_PATH}/Arieo-Module-ObbArchive/$ENV{ENGINE_PRESET}/bin/$ENV{ENGINE_BUILD_TYPE}/libarieo_obb_archive_module.so
         - $ENV{ENGINE_INSTALL_PATH}/Arieo-Module-ImageLoader/$ENV{ENGINE_PRESET}/bin/$ENV{ENGINE_BUILD_TYPE}/libarieo_image_loader_module.so
         - $ENV{ENGINE_INSTALL_PATH}/Arieo-Module-ModelLoader/$ENV{ENGINE_PRESET}/bin/$ENV{ENGINE_BUILD_TYPE}/libarieo_model_loader_module.so
       
-        - $ENV{ENGINE_INSTALL_PATH}/Arieo-Module-Sample/$ENV{ENGINE_PRESET}/bin/$ENV{ENGINE_BUILD_TYPE}/libarieo_render_test_module.so
+        - $ENV{ENGINE_INSTALL_PATH}/Arieo-Module-RenderTest/$ENV{ENGINE_PRESET}/bin/$ENV{ENGINE_BUILD_TYPE}/libarieo_render_test_module.so
     raspberry:
       environments:
         PATH: ["PATH1", "PATH2"]
@@ -54,10 +56,11 @@ app:
         - $ENV{ENGINE_INSTALL_PATH}/Arieo-Module-Vulkan/$ENV{ENGINE_PRESET}/bin/$ENV{ENGINE_BUILD_TYPE}/libarieo_vulkan_module.so
         - $ENV{ENGINE_INSTALL_PATH}/Arieo-Module-X11Window/$ENV{ENGINE_PRESET}/bin/$ENV{ENGINE_BUILD_TYPE}/libarieo_x11_window_module.so
         - $ENV{ENGINE_INSTALL_PATH}/Arieo-Module-OSFileSystemArchive/$ENV{ENGINE_PRESET}/bin/$ENV{ENGINE_BUILD_TYPE}/libarieo_os_filesystem_archive_module.so
+        - $ENV{ENGINE_INSTALL_PATH}/Arieo-Module-ObbArchive/$ENV{ENGINE_PRESET}/bin/$ENV{ENGINE_BUILD_TYPE}/libarieo_obb_archive_module.so
         - $ENV{ENGINE_INSTALL_PATH}/Arieo-Module-ImageLoader/$ENV{ENGINE_PRESET}/bin/$ENV{ENGINE_BUILD_TYPE}/libarieo_image_loader_module.so
         - $ENV{ENGINE_INSTALL_PATH}/Arieo-Module-ModelLoader/$ENV{ENGINE_PRESET}/bin/$ENV{ENGINE_BUILD_TYPE}/libarieo_model_loader_module.so
       
-        - $ENV{ENGINE_INSTALL_PATH}/Arieo-Module-Sample/$ENV{ENGINE_PRESET}/bin/$ENV{ENGINE_BUILD_TYPE}/libarieo_render_test_module.so
+        - $ENV{ENGINE_INSTALL_PATH}/Arieo-Module-RenderTest/$ENV{ENGINE_PRESET}/bin/$ENV{ENGINE_BUILD_TYPE}/libarieo_render_test_module.so
     android:
       environments:
         PATH: ["PATH1", "PATH2"]
@@ -65,18 +68,19 @@ app:
         ENGINE_PRESET: "android.armv8"
         ENGINE_BUILD_TYPE: "RelWithDebInfo"
 
-        CONTENT_ROOT: "$ENV{APP_MANIFEST_DIR}"
+        CONTENT_ROOT: "$ENV{APP_MANIFEST_DIR}/arieo_render_test_app.obb"
       modules:
         # main module's name is hardcoded in the AndroidMain of bootstrap_app project
         # main_module: ${EXE_DIR}/modules/libarieo_main_module.so
 
         - $ENV{APP_INTERNAL_DATA_DIR}/engine/Arieo-Module-Vulkan/$ENV{ENGINE_PRESET}/bin/$ENV{ENGINE_BUILD_TYPE}/libarieo_vulkan_module.so
         - $ENV{APP_INTERNAL_DATA_DIR}/engine/Arieo-Module-OSFileSystemArchive/$ENV{ENGINE_PRESET}/bin/$ENV{ENGINE_BUILD_TYPE}/libarieo_os_filesystem_archive_module.so
+        - $ENV{APP_INTERNAL_DATA_DIR}/engine/Arieo-Module-ObbArchive/$ENV{ENGINE_PRESET}/bin/$ENV{ENGINE_BUILD_TYPE}/libarieo_obb_archive_module.so
         - $ENV{APP_INTERNAL_DATA_DIR}/engine/Arieo-Module-ImageLoader/$ENV{ENGINE_PRESET}/bin/$ENV{ENGINE_BUILD_TYPE}/libarieo_image_loader_module.so
         - $ENV{APP_INTERNAL_DATA_DIR}/engine/Arieo-Module-ModelLoader/$ENV{ENGINE_PRESET}/bin/$ENV{ENGINE_BUILD_TYPE}/libarieo_model_loader_module.so
         - $ENV{APP_INTERNAL_DATA_DIR}/engine/Arieo-Module-AndroidWindow/$ENV{ENGINE_PRESET}/bin/$ENV{ENGINE_BUILD_TYPE}/libarieo_android_win_module.so
       
-        - $ENV{APP_INTERNAL_DATA_DIR}/engine/Arieo-Module-Sample/$ENV{ENGINE_PRESET}/bin/$ENV{ENGINE_BUILD_TYPE}/libarieo_render_test_module.so
+        - $ENV{APP_INTERNAL_DATA_DIR}/engine/Arieo-Module-RenderTest/$ENV{ENGINE_PRESET}/bin/$ENV{ENGINE_BUILD_TYPE}/libarieo_render_test_module.so
     macos:
       environments:
         PATH: ["PATH1", "PATH2"]
@@ -92,7 +96,8 @@ app:
         - $ENV{ENGINE_INSTALL_PATH}/Arieo-Module-Vulkan/$ENV{ENGINE_PRESET}/bin/$ENV{ENGINE_BUILD_TYPE}/libarieo_vulkan_module.so
         - $ENV{ENGINE_INSTALL_PATH}/Arieo-Module-GlfwWindow/$ENV{ENGINE_PRESET}/bin/$ENV{ENGINE_BUILD_TYPE}/libarieo_glfw_win_module.so
         - $ENV{ENGINE_INSTALL_PATH}/Arieo-Module-OSFileSystemArchive/$ENV{ENGINE_PRESET}/bin/$ENV{ENGINE_BUILD_TYPE}/libarieo_os_filesystem_archive_module.so
+        - $ENV{ENGINE_INSTALL_PATH}/Arieo-Module-ObbArchive/$ENV{ENGINE_PRESET}/bin/$ENV{ENGINE_BUILD_TYPE}/libarieo_obb_archive_module.so
         - $ENV{ENGINE_INSTALL_PATH}/Arieo-Module-ImageLoader/$ENV{ENGINE_PRESET}/bin/$ENV{ENGINE_BUILD_TYPE}/libarieo_image_loader_module.so
         - $ENV{ENGINE_INSTALL_PATH}/Arieo-Module-ModelLoader/$ENV{ENGINE_PRESET}/bin/$ENV{ENGINE_BUILD_TYPE}/libarieo_model_loader_module.so
 
-        - $ENV{ENGINE_INSTALL_PATH}/Arieo-Module-Sample/$ENV{ENGINE_PRESET}/bin/$ENV{ENGINE_BUILD_TYPE}/libarieo_render_test_module.so
+        - $ENV{ENGINE_INSTALL_PATH}/Arieo-Module-RenderTest/$ENV{ENGINE_PRESET}/bin/$ENV{ENGINE_BUILD_TYPE}/libarieo_render_test_module.so
