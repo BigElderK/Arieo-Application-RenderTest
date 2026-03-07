@@ -100,3 +100,23 @@ app:
         - $ENV{ENGINE_INSTALL_PATH}/Arieo-Module-ModelLoader/$ENV{ENGINE_PRESET}/bin/$ENV{ENGINE_BUILD_TYPE}/libarieo_model_loader_module.so
 
         - $ENV{ENGINE_INSTALL_PATH}/Arieo-Module-RenderTest/$ENV{ENGINE_PRESET}/bin/$ENV{ENGINE_BUILD_TYPE}/libarieo_render_test_module.so
+    emscripten:
+      environments:
+        PATH: ["PATH1", "PATH2"]
+        ENGINE_INSTALL_PATH: "$ENV{WEB_ROOT}/02_engine"
+        ENGINE_PRESET: "emscripten.wasm32"
+        ENGINE_BUILD_TYPE: "RelWithDebInfo"
+        ENABLE_VULKAN_VALIDATION_LAYER: "False"
+
+        CONTENT_ROOT: "$ENV{APP_MANIFEST_DIR}"
+      modules:
+        - $ENV{ENGINE_INSTALL_PATH}/Arieo-Module-Main/$ENV{ENGINE_PRESET}/bin/$ENV{ENGINE_BUILD_TYPE}/arieo_main_module.wasm
+
+        # - $ENV{ENGINE_INSTALL_PATH}/Arieo-Module-Vulkan/$ENV{ENGINE_PRESET}/bin/$ENV{ENGINE_BUILD_TYPE}/libarieo_vulkan_module.so
+        # - $ENV{ENGINE_INSTALL_PATH}/Arieo-Module-GlfwWindow/$ENV{ENGINE_PRESET}/bin/$ENV{ENGINE_BUILD_TYPE}/libarieo_glfw_win_module.so
+        # - $ENV{ENGINE_INSTALL_PATH}/Arieo-Module-OSFileSystemArchive/$ENV{ENGINE_PRESET}/bin/$ENV{ENGINE_BUILD_TYPE}/libarieo_os_filesystem_archive_module.so
+        # - $ENV{ENGINE_INSTALL_PATH}/Arieo-Module-ObbArchive/$ENV{ENGINE_PRESET}/bin/$ENV{ENGINE_BUILD_TYPE}/libarieo_obb_archive_module.so
+        # - $ENV{ENGINE_INSTALL_PATH}/Arieo-Module-ImageLoader/$ENV{ENGINE_PRESET}/bin/$ENV{ENGINE_BUILD_TYPE}/libarieo_image_loader_module.so
+        # - $ENV{ENGINE_INSTALL_PATH}/Arieo-Module-ModelLoader/$ENV{ENGINE_PRESET}/bin/$ENV{ENGINE_BUILD_TYPE}/libarieo_model_loader_module.so
+
+        # - $ENV{ENGINE_INSTALL_PATH}/Arieo-Module-RenderTest/$ENV{ENGINE_PRESET}/bin/$ENV{ENGINE_BUILD_TYPE}/libarieo_render_test_module.so
