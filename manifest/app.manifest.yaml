@@ -120,3 +120,4 @@ app:
         # - $ENV{ENGINE_INSTALL_PATH}/Arieo-Module-ModelLoader/$ENV{ENGINE_PRESET}/bin/$ENV{ENGINE_BUILD_TYPE}/libarieo_model_loader_module.so
 
         # - $ENV{ENGINE_INSTALL_PATH}/Arieo-Module-RenderTest/$ENV{ENGINE_PRESET}/bin/$ENV{ENGINE_BUILD_TYPE}/libarieo_render_test_module.so
+        - $ENV{ENGINE_INSTALL_PATH}/Arieo-Module-Sample/$ENV{ENGINE_PRESET}/bin/$ENV{ENGINE_BUILD_TYPE}/arieo_sample_module.wasm
